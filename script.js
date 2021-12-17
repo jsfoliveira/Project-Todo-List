@@ -13,14 +13,13 @@ function criarTarefa (){
         listaTarefa.appendChild(novoLi);
         novoLi.innerHTML = digitarInput.value;
         digitarInput.value = '';
-    }
+    }   
 }
-
-
 //adicionar o escutar do click do botão para criar a função de criar tarefa
-btnCriarTarefa.addEventListener('click', criarTarefa());
+btnCriarTarefa.addEventListener('click', criarTarefa);
 //chamar a função
 criarTarefa();
+
 
 
 
