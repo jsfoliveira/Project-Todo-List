@@ -6,7 +6,7 @@ body {
 /* criei a cor https://mycolor.space/gradient3?ori=to+right+top&hex=%23D16BA5&hex2=%2386A8E7&hex3=%235FFBF1&submit=submit */
 
 header {
-  background-color: rgba(255, 255, 255, 0.733);
+  background-color: white;
   height: 80%;
   margin: 180px 150px;
   border-radius: 10%;
@@ -32,4 +32,8 @@ section {
 #texto-tarefa {
   border-color: rgba(95, 40, 95, 0.938);
   ;
+}
+
+.selected {
+  background-color: rgb(128, 128, 128);
 }
