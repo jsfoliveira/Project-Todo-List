@@ -6,15 +6,22 @@ var digitarInput = document.querySelector('#texto-tarefa');
 var btnCriarTarefa = document.querySelector('#criar-tarefa');
 //onde vai aparecer a tarefa
 var listaTarefa = document.querySelector('#lista-tarefas');
+//onde está o botão apagar tudo
+let btnApagarTudo = document.querySelector("#apaga-tudo");
 //criar a função 
 function criarTarefa (){
+    //se tamanho do valor digitado no input for maior que 0
     if (digitarInput.value.length > 0){
+    //cria um li, que será filho de listaTarefa
         var novoLi = document.createElement('li');
         listaTarefa.appendChild(novoLi);
+    //o conteúdo do novoLi será igual ao conteúdo digitado no input
         novoLi.innerHTML = digitarInput.value;
+    //depois que criar o novoLi, o input deve ficar vazio
         digitarInput.value = '';
+    //o escutador está dentro para eu conseguir utilizar o novoLi criado
         novoLi.addEventListener('click',bgLista);
-       
+        btnApagarTudo.addEventListener('click', removerLi);
     }
     
 }
@@ -22,17 +29,19 @@ function criarTarefa (){
 btnCriarTarefa.addEventListener('click', criarTarefa);
 //chamar a função
 criarTarefa();
-//7 - Clicar em um item da lista deve alterar alterar para a classe selected e mudar a cor de fundo do item para cinza rgb(128,128,128)
-//selected é uma classe que está definir o backgroundColor
-//onde está o item da lista
 
+//função para mudar a cor do novoLi quando for clicado, não posso mudar a cor de mais de um li
+//tive ajuda de josé wilson
 function bgLista (event){
+    //onde está o item da lista. vou percorrer todos esses itens
     let novoLi = document.querySelectorAll('li');
         for (let i = 0;  i < novoLi.length; i += 1){
     
             var listaLi = novoLi[i].innerHTML;
             
             // if (listaLi !== event.target.innerHTML){
+    //selected é uma classe que está definir o backgroundColor
+    //se o novoLi tiver classe selected, deve remover, caso contrário, deve adicionar
                 if(novoLi[i].className == 'selected'){
                     novoLi[i].classList.remove('selected');
                 // }
@@ -41,34 +50,21 @@ function bgLista (event){
             }
         } 
     } 
-  
-//adicionar o escutador para quando clicar no item da lista para executar a função de mudar o background
-// document.querySelectorAll('li').addEventListener('click', bgLista);
-// listaTarefa.innerHTML.addEventListener('click', bgLista);
+//o escutador está na função anterior
 //chamar a função
+bgLista();
 
-
-
-// let selected = '';
 // // let completed = [];
-// let corNova = rgb(128,128,128);
-// function bgLista (event){
-//     for (let i = 0;  i < selected.classList.length; i += 1){
 
-//     }
-// }
+//quando apertar o botão "Apaga tudo", apagar todos os li
+function removerLi (){
+    let novoLi = document.querySelectorAll('li');
+    for (let i = 0; i < novoLi.length; i += 1){
+        novoLi[i].remove();
+    }
+}
+//segunda forma de fazer
+// function removerLi (){
+//     var listaTarefa = document.querySelector('#lista-tarefas');
+//    listaTarefa.innerHTML = '';
 
-
-// let corAntiga = 'white';
-// let corNova = rgb(128,128,128);
-// function bgLista (){
-//     if (novoLi.style.backgroundColor === corAntiga) {
-//         novoLi.style.backgroundColor = corNova;
-//       } 
-// }
-
-
-
-
-
-// novoLi.id = 'novoLi';

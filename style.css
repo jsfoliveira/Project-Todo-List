@@ -21,10 +21,12 @@ section {
   height: 100px;
 }
 
-#criar-tarefa {
+#criar-tarefa,
+#apaga-tudo,
+#remover-finalizados {
   cursor: pointer;
   height: 36px;
-  border-radius: 18%;
+  border-radius: 18px;
   background-color: rgba(95, 40, 95, 0.938);
   color: rgba(255, 255, 255, 0.747);
 }
