@@ -52,12 +52,5 @@ Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi co
 #### :footprints:Requisito 10
 Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista.
 #### :footprints:Requisito 11
-Teste a semântica da sua página está aprovada pelo site CodeSniffer
-#### :footprints:Requisito 12
-Adicione uma tabela à página
-#### :footprints:Requisito 13
-Utilize o Box model
-#### :footprints:Requisito 14
-Altere atributos relacionados as fontes
-#### :footprints:Requisito 15
-Posicione o seu artigo e a seção sobre aprendizados um ao lado do outro
+Adicione um botão com id="remover-finalizados" que quando clicado remove somente os elementos finalizados da sua lista.
+
